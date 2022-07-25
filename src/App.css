@@ -1,30 +1,29 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #fa2222;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-r:hover,
+a:hover {
+  color: #8f0404;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
 }
 
-.App-link {
+.app-link {
   color: #61dafb;
 }
 
@@ -34,5 +33,178 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.bg-app {
+  background: linear-gradient(to right, #480164dc, #22a7f0);
+}
+
+.bg-bl {
+  background-color: #22a7f0;
+}
+
+.text-bl {
+  color: #22a7f0;
+}
+
+.text-r {
+  color: #fa2222;
+}
+
+.bg-r a,
+.bg-r {
+  background-color: #fa2222;
+  color: #fff;
+}
+
+.bg-r a:hover {
+  color: rgb(199, 194, 194);
+}
+
+.text-bl:hover {
+  color: #0a5f8d;
+}
+
+.deco-none,
+a.deco-none {
+  text-decoration: none;
+}
+
+a.bg-dark:hover {
+  color: #fff;
+}
+
+.bl-card:hover {
+  background: linear-gradient(to right, #480164dc, #22a7f0);
+  color: #ffffff !important;
+  cursor: pointer;
+}
+
+.img-rounded-50 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+span.services {
+  font-size: 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+
+.features .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 10px 60px;
+}
+
+.features .icon-box i {
+  font-size: 48px;
+  float: left;
+  color: #0a5f8d;
+}
+
+.features .icon-box p {
+  font-size: 15px;
+  color: #848484;
+  margin-left: 60px;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+.services .icon-box {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.services .icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+  color: #22a7f0;
+  overflow: hidden;
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.services .icon i {
+  font-size: 36px;
+  line-height: 0;
+}
+
+.services .icon-box:hover .icon {
+  box-shadow: 0px 0 25px #8f0404;
+}
+
+.services .title {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 18px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.services .title a {
+  color: #444444;
+  transition: 0.3s;
+}
+
+.services .title a:hover {
+  color: #8f0404;
+}
+
+.services .title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #8f0404;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.services .description {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.box-dotted-icon {
+  font-size: 38px;
+  width: 60px;
+  height: 60px;
+  border: 2px dotted #8f0404;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 600px) {
+  .d-lg {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .d-lg {
+    display: inline-block;
   }
 }
