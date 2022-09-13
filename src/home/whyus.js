@@ -34,10 +34,11 @@ const WhyUs = () => {
               <p className="mt-5">
                 <b className="text-dark">Quality</b>
                 <br />
-                We are a registred and certified company, having experienced
-                drivers and mechanical engineers that ensure that each vehical
-                passes a number of stringent quality tests before it is put on
-                the road to transport our passangers.
+                We are a registred (Reg. No: 80020003044898) and certified
+                company, having experienced drivers and mechanical engineers
+                that ensure that each vehical passes a number of stringent
+                quality tests before it is put on the road to transport our
+                passangers.
               </p>
               <p className="mt-5">
                 <b className="text-dark">Price</b>

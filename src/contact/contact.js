@@ -1,10 +1,50 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import Footer from "../componets/footer";
 import Header from "../componets/header";
+import { sendMessage } from "../features/contactSlice";
+
 const Contact = () => {
+  const { status, message, success, error } = useSelector(
+    (state) => state.contact
+  );
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [body, setMessage] = useState("");
+  const toastId = React.useRef(null);
+
   useEffect(() => {
     document.title = "FLY EXPRESS TRAVELLERS | Contact Us";
-  }, []);
+    if (status === "loading") {
+      toastId.current = toast.loading("sending message...");
+    }
+
+    if (success) {
+      toast.dismiss();
+      toast.success(message);
+      document.getElementById("contactForm").reset();
+    }
+
+    if (error) {
+      toast.dismiss();
+      toast.error(message);
+    }
+  }, [dispatch, success, error, message, status]);
+
+  const handleSendMessage = () => {
+    const mss = {
+      email,
+      name,
+      subject,
+      body,
+    };
+
+    dispatch(sendMessage(mss));
+  };
+
   return (
     <Fragment>
       {/* Contact us */}
@@ -77,7 +117,7 @@ const Contact = () => {
           {/* Send message */}
           <div className="col-md-6 mt-3">
             <div className="card card-body shadow">
-              <form>
+              <form id="contactForm">
                 <div className="row mt-3">
                   <div className="col-md-6">
                     <label className="mb-3 w-100" htmlFor="name">
@@ -87,7 +127,7 @@ const Contact = () => {
                         className="form-control"
                         autoComplete="off"
                         placeholder="Enter your full name"
-                        required
+                        onKeyUp={(e) => setName(e.target.value)}
                       />
                     </label>
                   </div>
@@ -99,6 +139,7 @@ const Contact = () => {
                         className="form-control"
                         autoComplete="off"
                         placeholder="Enter your email"
+                        onKeyUp={(e) => setEmail(e.target.value)}
                         required
                       />
                     </label>
@@ -112,6 +153,7 @@ const Contact = () => {
                       className="form-control"
                       autoComplete="off"
                       placeholder="Enter subject"
+                      onKeyUp={(e) => setSubject(e.target.value)}
                       required
                     />
                   </label>
@@ -122,12 +164,18 @@ const Contact = () => {
                       className="form-control"
                       placeholder="type your message here"
                       rows={5}
+                      onKeyUp={(e) => setMessage(e.target.value)}
                       required
                     ></textarea>
                   </label>
                 </div>
                 <div className="mb-3 d-flex justify-content-end">
-                  <button type="submit" className="btn btn-danger">
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => handleSendMessage()}
+                    id="submit-btn"
+                  >
                     Send Message
                   </button>
                 </div>

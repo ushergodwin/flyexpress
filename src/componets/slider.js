@@ -1,6 +1,13 @@
 import React, { Fragment } from "react";
 import "../App.css";
 const Slider = () => {
+  const gallary = [];
+  const slideTab = [];
+  for (let i = 3; i < 13; i++) {
+    gallary.push(`g${i}.jpeg`);
+    slideTab.push(i);
+  }
+
   return (
     <Fragment>
       <div
@@ -16,6 +23,15 @@ const Slider = () => {
           ></li>
           <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
           <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          {slideTab.map((value, i) => {
+            return (
+              <li
+                data-bs-target="#myCarousel"
+                data-bs-slide-to={value}
+                key={i}
+              ></li>
+            );
+          })}
         </ol>
 
         <div className="carousel-inner">
@@ -30,22 +46,26 @@ const Slider = () => {
           </div>
           <div className="carousel-item active">
             <img
-              src={`imgs/airport-express.jpg`}
+              src={`imgs/gallary/banner.jpg`}
               className="d-block w-100 img-fluid"
-              alt="Express Care"
+              alt="FlyExpress Team"
               height={500}
               width={100}
             />
           </div>
-          {/* <div className="carousel-item">
-            <img
-              src={`imgs/FB_IMG_16542461830457933.jpg`}
-              className="d-block w-100"
-              alt="express rental"
-              height={500}
-              width={100}
-            />
-          </div> */}
+          {gallary.map((img, i) => {
+            return (
+              <div className="carousel-item" key={i}>
+                <img
+                  src={`imgs/gallary/${img}`}
+                  className="d-block w-100 img-fluid"
+                  alt="Fly Express"
+                  height={500}
+                  width={100}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <a

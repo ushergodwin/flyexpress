@@ -9,6 +9,7 @@ const Home = () => {
   useEffect(() => {
     document.title = "FLY EXPRESS TRAVELLERS | Home";
   }, []);
+
   return (
     <Fragment>
       <header>
@@ -310,61 +311,49 @@ const Home = () => {
           {/* Send message */}
           <div className="col-md-6 mt-3">
             <div className="card card-body shadow">
-              <form>
-                <div className="row mt-3">
-                  <div className="col-md-6">
-                    <label className="mb-3 w-100" htmlFor="name">
-                      <input
-                        type={`text`}
-                        name="name"
-                        className="form-control"
-                        autoComplete="off"
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </label>
-                  </div>
-                  <div className="col-md-6">
-                    <label className="mb-3 w-100" htmlFor="email">
-                      <input
-                        type={`email`}
-                        name="name"
-                        className="form-control"
-                        autoComplete="off"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </label>
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <label className="w-100" htmlFor="subject">
-                    <input
-                      type={`text`}
-                      name="subject"
-                      className="form-control"
-                      autoComplete="off"
-                      placeholder="Enter subject"
-                      required
-                    />
-                  </label>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="message" className="w-100">
-                    <textarea
-                      className="form-control"
-                      placeholder="type your message here"
-                      rows={5}
-                      required
-                    ></textarea>
-                  </label>
-                </div>
-                <div className="mb-3 d-flex justify-content-end">
-                  <button type="submit" className="btn btn-danger">
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <h5>Office Working Hours</h5>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Monday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Tuesday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Wednesday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Thursday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Friday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Saturday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-between mt-1">
+                <p>Sunday</p>
+                <p>
+                  <i className="fa-solid fa-clock text-primary"></i> 8AM - 8PM
+                </p>
+              </div>
             </div>
           </div>
         </div>

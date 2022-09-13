@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from "./reportWebVitals";
 import Store from "./store/store";
 import { Provider } from "react-redux";
@@ -10,10 +11,14 @@ import Contact from "./contact/contact";
 import Booking from "./booking/booking";
 import About from "./about/about";
 import WhyUs from "./home/whyus";
+import { ToastContainer } from "react-toastify";
+import Team from "./team/team";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={Store}>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,6 +26,7 @@ root.render(
           <Route path="/booking" element={<Booking />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/why-us" element={<WhyUs />} />
+          <Route path="/our-team" element={<Team />} />
         </Routes>
       </BrowserRouter>
     </Provider>

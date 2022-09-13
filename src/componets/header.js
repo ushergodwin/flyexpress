@@ -69,6 +69,16 @@ const Header = (props = {}) => {
                   Why Us?
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  to={`/our-team`}
+                  className={`nav-link ${
+                    props.active === "our-team" ? "active underline" : ""
+                  }`}
+                >
+                  Our Team
+                </Link>
+              </li>
             </ul>
             <span className="navbar-text text-light font-weight-bold">
               Fly Express Travellers,{" "}
