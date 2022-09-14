@@ -5,7 +5,7 @@ export const sendMessage = createAsyncThunk(
   "contact/sendMessage",
   async (message) => {
     const response = await axios.post(
-      "http://localhost/phpmail/index.php",
+      "https:flyexpresstravellers.com/phpmail/index.php",
       message
     );
     return response.data;

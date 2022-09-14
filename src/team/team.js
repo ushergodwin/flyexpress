@@ -30,7 +30,7 @@ const Team = () => {
       photo: "welfare.jpeg",
     },
     {
-      name: "SAAHA MED",
+      name: "NALUGAVU AISHA",
       title: "TREASURER",
       photo: "treasurer.jpeg",
     },
